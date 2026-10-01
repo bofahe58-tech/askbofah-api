@@ -114,6 +114,7 @@ C:\Users\bofah\source\repos\AskBofah\AskBofah.Api\obj\Debug\net9.0\AskBofah.Api.
 C:\Users\bofah\source\repos\AskBofah\AskBofah.Api\obj\Debug\net9.0\AskBofah.Api.csproj.CoreCompileInputs.cache
 C:\Users\bofah\source\repos\AskBofah\AskBofah.Api\obj\Debug\net9.0\AskBofah.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\bofah\source\repos\AskBofah\AskBofah.Api\obj\Debug\net9.0\AskBofah.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bofah\source\repos\AskBofah\AskBofah.Api\obj\Debug\net9.0\AskBofah.Api.sourcelink.json
 C:\Users\bofah\source\repos\AskBofah\AskBofah.Api\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\bofah\source\repos\AskBofah\AskBofah.Api\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\bofah\source\repos\AskBofah\AskBofah.Api\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json

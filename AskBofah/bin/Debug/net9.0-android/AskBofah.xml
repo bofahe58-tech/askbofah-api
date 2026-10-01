@@ -29,6 +29,18 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.UserName">
+            <inheritdoc cref="F:AskBofah.ViewModels.ChatViewModel.userName"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.Initial">
+            <inheritdoc cref="F:AskBofah.ViewModels.ChatViewModel.initial"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.IsLoadingHistory">
+            <inheritdoc cref="F:AskBofah.ViewModels.ChatViewModel.isLoadingHistory"/>
         </member>
         <member name="P:AskBofah.ViewModels.ChatViewModel.InputText">
             <inheritdoc cref="F:AskBofah.ViewModels.ChatViewModel.inputText"/>
@@ -38,6 +50,33 @@
         </member>
         <member name="P:AskBofah.ViewModels.ChatViewModel.IsBusy">
             <inheritdoc cref="F:AskBofah.ViewModels.ChatViewModel.isBusy"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.PlanTier">
+            <inheritdoc cref="F:AskBofah.ViewModels.ChatViewModel.planTier"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.PlanLabel">
+            <inheritdoc cref="F:AskBofah.ViewModels.ChatViewModel.planLabel"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.IsFreePlan">
+            <inheritdoc cref="F:AskBofah.ViewModels.ChatViewModel.isFreePlan"/>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.loadConversationsCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.LoadConversationsCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.LoadConversationsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.LoadConversationsAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.openConversationCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.OpenConversationCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.OpenConversationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.OpenConversationAsync(AskBofah.Models.ConversationSummary)"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.deleteConversationCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.DeleteConversationCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.DeleteConversationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.DeleteConversationAsync(AskBofah.Models.ConversationSummary)"/>.</summary>
         </member>
         <member name="F:AskBofah.ViewModels.ChatViewModel.sendCommand">
             <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.SendCommand"/>.</summary>
@@ -50,12 +89,6 @@
         </member>
         <member name="P:AskBofah.ViewModels.ChatViewModel.RegenerateCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.RegenerateAsync"/>.</summary>
-        </member>
-        <member name="F:AskBofah.ViewModels.ChatViewModel.clearChatCommand">
-            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.ClearChatCommand"/>.</summary>
-        </member>
-        <member name="P:AskBofah.ViewModels.ChatViewModel.ClearChatCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.ClearChatAsync"/>.</summary>
         </member>
         <member name="F:AskBofah.ViewModels.ChatViewModel.copyMessageCommand">
             <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.CopyMessageCommand"/>.</summary>
@@ -86,6 +119,12 @@
         </member>
         <member name="P:AskBofah.ViewModels.ChatViewModel.NewChatCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.NewChat"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.upgradePlanCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.UpgradePlanCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.UpgradePlanCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.UpgradePlanAsync"/>.</summary>
         </member>
         <member name="T:AskBofah.ViewModels.ForgotPasswordViewModel">
             <inheritdoc/>
@@ -443,6 +482,15 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Timestamp">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Timestamp" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UserName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UserName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Initial">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Initial" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoadingHistory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoadingHistory" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.InputText">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "InputText" generated properties.</summary>
         </member>
@@ -451,6 +499,15 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PlanTier">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PlanTier" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PlanLabel">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PlanLabel" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsFreePlan">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsFreePlan" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
@@ -512,6 +569,15 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Timestamp">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Timestamp" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UserName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UserName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Initial">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Initial" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoadingHistory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoadingHistory" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.InputText">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "InputText" generated properties.</summary>
         </member>
@@ -520,6 +586,15 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PlanTier">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PlanTier" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PlanLabel">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PlanLabel" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsFreePlan">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsFreePlan" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>

@@ -16,7 +16,6 @@ namespace AskBofah.Models
         [ObservableProperty]
         private DateTime timestamp = DateTime.Now;
 
-        public string TimestampDisplay =>
-            Timestamp.ToString("HH:mm");
+        public string TimestampDisplay => Timestamp.ToString("HH:mm");
     }
 }

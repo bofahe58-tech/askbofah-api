@@ -25,8 +25,9 @@ namespace AskBofah
             // SERVICES
             // =====================================================
             builder.Services.AddSingleton<SecureStorageService>();
+            builder.Services.AddSingleton<ApiClient>();
             builder.Services.AddSingleton<AuthService>();
-            builder.Services.AddSingleton<OpenRouterService>();
+            builder.Services.AddSingleton<ChatService>();
 
             // =====================================================
             // VIEWMODELS
@@ -44,10 +45,6 @@ namespace AskBofah
             builder.Services.AddTransient<RegisterPage>();
             builder.Services.AddTransient<ForgotPasswordPage>();
             builder.Services.AddTransient<MainPage>();
-
-            // NOTE: ChatView is a ContentView, not a Page.
-            // It's instantiated manually inside MainPage.xaml.cs,
-            // so it does NOT need to be registered here.
 
 #if DEBUG
             builder.Logging.AddDebug();

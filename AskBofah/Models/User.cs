@@ -1,25 +1,28 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace AskBofah.Models
 {
     public class User
     {
-        [JsonProperty("_id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; } = string.Empty;
 
-        [JsonProperty("name")]
+        [JsonPropertyName("fullName")]
         public string Name { get; set; } = string.Empty;
 
-        [JsonProperty("email")]
+        [JsonPropertyName("email")]
         public string Email { get; set; } = string.Empty;
 
-        [JsonProperty("role")]
-        public string Role { get; set; } = "student";
+        [JsonPropertyName("planTier")]
+        public string PlanTier { get; set; } = "Free";
 
-        [JsonProperty("avatar")]
-        public string? Avatar { get; set; }
+        [JsonPropertyName("subscriptionExpiresAt")]
+        public DateTime? SubscriptionExpiresAt { get; set; }
 
-        [JsonProperty("createdAt")]
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        [JsonPropertyName("messagesSentToday")]
+        public int MessagesSentToday { get; set; }
+
+        [JsonPropertyName("dailyMessageLimit")]
+        public int DailyMessageLimit { get; set; } = 50;
     }
 }

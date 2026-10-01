@@ -126,6 +126,7 @@ C:\Users\bofah\source\repos\AskBofah\AskBofah\obj\Debug\net9.0-android\AskBofah.
 C:\Users\bofah\source\repos\AskBofah\AskBofah\obj\Debug\net9.0-android\AskBofah.AssemblyInfoInputs.cache
 C:\Users\bofah\source\repos\AskBofah\AskBofah\obj\Debug\net9.0-android\AskBofah.AssemblyInfo.cs
 C:\Users\bofah\source\repos\AskBofah\AskBofah\obj\Debug\net9.0-android\AskBofah.csproj.CoreCompileInputs.cache
+C:\Users\bofah\source\repos\AskBofah\AskBofah\obj\Debug\net9.0-android\AskBofah.sourcelink.json
 C:\Users\bofah\source\repos\AskBofah\AskBofah\obj\Debug\net9.0-android\XamlC.stamp
 C:\Users\bofah\source\repos\AskBofah\AskBofah\obj\Debug\net9.0-android\AskBofah.dll
 C:\Users\bofah\source\repos\AskBofah\AskBofah\obj\Debug\net9.0-android\AskBofah.pdb

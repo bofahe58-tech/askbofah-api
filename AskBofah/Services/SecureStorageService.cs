@@ -1,6 +1,5 @@
 ﻿using AskBofah.Helpers;
 using AskBofah.Models;
-using Newtonsoft.Json;
 
 namespace AskBofah.Services
 {
@@ -67,7 +66,6 @@ namespace AskBofah.Services
             catch { }
         }
 
-        // ==================== CHAT HISTORY (Local) ====================
         public void SaveChatHistory(string json)
         {
             Preferences.Default.Set(AppConstants.PrefKeyConversationHistory, json);

@@ -44,6 +44,7 @@ namespace AskBofah.Api.Controllers
                 Email = email,
                 PasswordHash = _password.Hash(request.Password),
                 PlanTier = "Free",
+                IsAdmin = false,
                 CreatedAt = DateTime.UtcNow,
                 LastLoginAt = DateTime.UtcNow
             };
@@ -118,6 +119,7 @@ namespace AskBofah.Api.Controllers
             FullName = user.FullName,
             Email = user.Email,
             PlanTier = user.PlanTier,
+            IsAdmin = user.IsAdmin,
             SubscriptionExpiresAt = user.SubscriptionExpiresAt,
             MessagesSentToday = user.MessagesSentToday,
             DailyMessageLimit = GetDailyLimit(user.PlanTier)

@@ -61,12 +61,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = AskBofah.Resources.Styles.
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/bofah/source/repos/AskBofah/AskBofah/Views/ChatPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = AskBofah.Views.ChatPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\ChatPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\ChatPage.xaml
-
 [C:/Users/bofah/source/repos/AskBofah/AskBofah/Views/ChatView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = AskBofah.Views.ChatView.xaml
