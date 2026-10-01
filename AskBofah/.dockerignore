@@ -1,0 +1,14 @@
+﻿# Build outputs (both projects)
+**/bin/
+**/obj/
+
+# Visual Studio
+**/.vs/
+
+# Local config — never ship to server
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/*.user
+
+# MAUI app — not needed for API build
+AskBofah/

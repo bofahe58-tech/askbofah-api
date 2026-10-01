@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AskBofah.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9d35d66e4c438e238690c6f0ddfc3ca3902981f")]
 [assembly: System.Reflection.AssemblyProductAttribute("AskBofah.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AskBofah.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
