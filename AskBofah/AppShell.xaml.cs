@@ -13,6 +13,7 @@ namespace AskBofah
             Routing.RegisterRoute("forgotpassword", typeof(ForgotPasswordPage));
             Routing.RegisterRoute("chat", typeof(ChatView));
             Routing.RegisterRoute("main", typeof(MainPage));
+            Routing.RegisterRoute("admin", typeof(AdminPage));
         }
     }
 }

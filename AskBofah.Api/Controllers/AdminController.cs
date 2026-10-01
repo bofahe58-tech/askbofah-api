@@ -52,7 +52,7 @@ namespace AskBofah.Api.Controllers
         // ============================================================
         // PATCH /api/admin/users/{id}/role — promote/demote (admin only)
         // ============================================================
-        [HttpPatch("users/{id}/role")]
+        [HttpPost("users/{id}/role")]
         public async Task<IActionResult> UpdateRole(Guid id, [FromBody] UpdateRoleRequest req)
         {
             var currentUserId = (Guid)HttpContext.Items["UserId"]!;

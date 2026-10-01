@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AskBofah.Views.AdminPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:AskBofah.Models"
+    xmlns:vm="clr-namespace:AskBofah.ViewModels"
+    x:DataType="vm:AdminViewModel"
+    BackgroundColor="{StaticResource WorkspaceBackground}"
+    Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto,Auto,*">
+
+        <!-- HEADER -->
+        <Border Grid.Row="0"
+                BackgroundColor="{StaticResource SidebarBackground}"
+                Stroke="{StaticResource HeaderBorder}"
+                StrokeThickness="1"
+                Padding="20,50,20,18">
+            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="14">
+
+                <Button Grid.Column="0"
+                        Text="←"
+                        FontSize="22"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        Padding="0"
+                        BackgroundColor="Transparent"
+                        TextColor="{StaticResource TextPrimary}"
+                        Command="{Binding GoBackCommand}" />
+
+                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                    <Label Text="Admin Dashboard"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource TextPrimary}" />
+                    <Label Text="Manage users and roles"
+                           FontSize="12"
+                           TextColor="{StaticResource TextMuted}" />
+                </VerticalStackLayout>
+
+                <Button Grid.Column="2"
+                        Text="⟳"
+                        FontSize="20"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        Padding="0"
+                        BackgroundColor="Transparent"
+                        TextColor="{StaticResource BrandTeal}"
+                        Command="{Binding LoadCommand}" />
+            </Grid>
+        </Border>
+
+        <!-- COUNT -->
+        <Label Grid.Row="1"
+               Text="{Binding CountText}"
+               FontSize="13"
+               TextColor="{StaticResource TextMuted}"
+               Margin="20,10,20,4" />
+
+        <!-- USER LIST -->
+        <RefreshView Grid.Row="2"
+                     Command="{Binding LoadCommand}"
+                     IsRefreshing="{Binding IsBusy}">
+            <CollectionView ItemsSource="{Binding Users}" SelectionMode="None">
+
+                <CollectionView.EmptyView>
+                    <VerticalStackLayout Padding="30" VerticalOptions="Center" Spacing="10">
+                        <Label Text="👥" FontSize="60" HorizontalOptions="Center" />
+                        <Label Text="No users found"
+                               FontSize="16"
+                               TextColor="{StaticResource TextMuted}"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:AdminUser">
+                        <Border BackgroundColor="{StaticResource CardBackground}"
+                                Stroke="{StaticResource CardBorder}"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 14"
+                                Padding="16"
+                                Margin="16,6">
+
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+
+                                <!-- AVATAR -->
+                                <Border Grid.Column="0"
+                                        WidthRequest="44" HeightRequest="44"
+                                        Background="{StaticResource BrandGradient}"
+                                        StrokeThickness="0"
+                                        VerticalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="22" />
+                                    </Border.StrokeShape>
+                                    <Label Text="{Binding Initial}"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center" />
+                                </Border>
+
+                                <!-- INFO -->
+                                <VerticalStackLayout Grid.Column="1" Spacing="3" VerticalOptions="Center">
+                                    <Label Text="{Binding FullName}"
+                                           FontSize="15"
+                                           FontAttributes="Bold"
+                                           TextColor="{StaticResource TextPrimary}"
+                                           LineBreakMode="TailTruncation" />
+                                    <Label Text="{Binding Email}"
+                                           FontSize="12"
+                                           TextColor="{StaticResource TextMuted}"
+                                           LineBreakMode="TailTruncation" />
+                                    <HorizontalStackLayout Spacing="8">
+                                        <Border BackgroundColor="#E3F2FD"
+                                                StrokeShape="RoundRectangle 4"
+                                                StrokeThickness="0"
+                                                Padding="6,2">
+                                            <Label Text="{Binding PlanTier}"
+                                                   FontSize="10"
+                                                   TextColor="#0D47A1"
+                                                   FontAttributes="Bold" />
+                                        </Border>
+                                        <Border BackgroundColor="#FFF3E0"
+                                                StrokeShape="RoundRectangle 4"
+                                                StrokeThickness="0"
+                                                Padding="6,2">
+                                            <Label Text="{Binding RoleLabel}"
+                                                   FontSize="10"
+                                                   TextColor="#E65100"
+                                                   FontAttributes="Bold" />
+                                        </Border>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+
+                                <!-- ACTIONS -->
+                                <VerticalStackLayout Grid.Column="2" Spacing="4" VerticalOptions="Center">
+                                    <Button Text="{Binding IsAdmin, Converter={StaticResource AdminToggleTextConverter}}"
+                                            FontSize="11"
+                                            HeightRequest="30"
+                                            Padding="8,0"
+                                            BackgroundColor="{StaticResource BrandIndigo}"
+                                            TextColor="White"
+                                            CornerRadius="8"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AdminViewModel}}, Path=ToggleAdminCommand}"
+                                            CommandParameter="{Binding .}" />
+                                    <Button Text="Delete"
+                                            FontSize="11"
+                                            HeightRequest="30"
+                                            Padding="8,0"
+                                            BackgroundColor="{StaticResource Danger}"
+                                            TextColor="White"
+                                            CornerRadius="8"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AdminViewModel}}, Path=DeleteUserCommand}"
+                                            CommandParameter="{Binding .}" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
+</ContentPage>

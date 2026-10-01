@@ -3,7 +3,7 @@
     x:Class="AskBofah.App"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:AskBofah.Helpers">
+    xmlns:helpers="clr-namespace:AskBofah.Helpers">
 
     <Application.Resources>
 
@@ -16,8 +16,11 @@
 
             </ResourceDictionary.MergedDictionaries>
 
-            <local:InverseBoolConverter
+            <helpers:InverseBoolConverter
                 x:Key="InverseBoolConverter" />
+
+            <helpers:AdminToggleTextConverter
+                x:Key="AdminToggleTextConverter" />
 
         </ResourceDictionary>
 

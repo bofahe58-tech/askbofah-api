@@ -62,7 +62,7 @@ namespace AskBofah.ViewModels
         }
 
         // ============================================================
-        // REFRESH USER INFO — with email fallback so it never says "Guest"
+        // REFRESH USER INFO
         // ============================================================
         private void RefreshUserInfo()
         {
@@ -70,7 +70,6 @@ namespace AskBofah.ViewModels
 
             string displayName = "Guest";
 
-            // Prefer full name; fall back to email prefix
             if (!string.IsNullOrWhiteSpace(user?.Name))
             {
                 displayName = user.Name.Trim();
@@ -101,10 +100,13 @@ namespace AskBofah.ViewModels
                 ? "Free plan · Upgrade for more"
                 : $"{PlanTier} plan";
             IsFreePlan = PlanTier == "Free";
+
+            // Admin flag
+            IsAdmin = user?.IsAdmin ?? false;
         }
 
         // ============================================================
-        // USER INFO — bound to sidebar
+        // USER INFO
         // ============================================================
         [ObservableProperty]
         private string userName = "Guest";
@@ -112,13 +114,16 @@ namespace AskBofah.ViewModels
         [ObservableProperty]
         private string initial = "U";
 
+        [ObservableProperty]
+        private bool isAdmin;
+
         // ============================================================
         // MESSAGES
         // ============================================================
         public ObservableCollection<ChatMessage> Messages { get; } = new();
 
         // ============================================================
-        // SIDEBAR: CHAT HISTORY
+        // CHAT HISTORY
         // ============================================================
         public ObservableCollection<ConversationSummary> Conversations { get; } = new();
 
@@ -488,6 +493,15 @@ namespace AskBofah.ViewModels
                 "Upgrade to Pro",
                 "Pro plan unlocks unlimited messages, priority AI, and more.\n\nPayments will be available in the next release.",
                 "Got it");
+        }
+
+        // ============================================================
+        // GO TO ADMIN DASHBOARD
+        // ============================================================
+        [RelayCommand]
+        private async Task GoToAdminAsync()
+        {
+            await Shell.Current.GoToAsync("admin");
         }
     }
 }

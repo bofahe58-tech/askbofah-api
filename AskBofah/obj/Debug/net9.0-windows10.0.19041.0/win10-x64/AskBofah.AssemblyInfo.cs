@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AskBofah")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+0c637ac40533cc0d48eb039de2a17f9ec1251580")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e961c365fede90b35d3fd9cb2db0a570c88ee283")]
 [assembly: System.Reflection.AssemblyProductAttribute("AskBofah")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AskBofah")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

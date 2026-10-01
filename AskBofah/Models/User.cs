@@ -16,6 +16,9 @@ namespace AskBofah.Models
         [JsonPropertyName("planTier")]
         public string PlanTier { get; set; } = "Free";
 
+        [JsonPropertyName("isAdmin")]
+        public bool IsAdmin { get; set; }
+
         [JsonPropertyName("subscriptionExpiresAt")]
         public DateTime? SubscriptionExpiresAt { get; set; }
 

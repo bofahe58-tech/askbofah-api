@@ -135,7 +135,7 @@
                     </VerticalStackLayout>
                 </Border>
 
-                <!-- User Profile + Logout -->
+                <!-- User Profile + Admin Gear + Logout -->
                 <Border
                     Grid.Row="4"
                     BackgroundColor="{StaticResource ProfileBackground}"
@@ -147,8 +147,9 @@
                         <RoundRectangle CornerRadius="10" />
                     </Border.StrokeShape>
 
-                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
+                    <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="6">
 
+                        <!-- Avatar -->
                         <Border
                             Grid.Column="0"
                             WidthRequest="28" HeightRequest="28"
@@ -164,6 +165,7 @@
                                    VerticalTextAlignment="Center" />
                         </Border>
 
+                        <!-- Name + Plan -->
                         <VerticalStackLayout Grid.Column="1" Spacing="0" VerticalOptions="Center">
                             <Label Text="{Binding UserName}" FontSize="12"
                                    FontAttributes="Bold"
@@ -173,8 +175,23 @@
                                    TextColor="{StaticResource TextMuted}" />
                         </VerticalStackLayout>
 
+                        <!-- Admin gear (only visible for admins) -->
                         <Button
                             Grid.Column="2"
+                            Text="⚙"
+                            FontSize="16"
+                            WidthRequest="32"
+                            HeightRequest="32"
+                            Padding="0"
+                            BackgroundColor="Transparent"
+                            TextColor="{StaticResource BrandTeal}"
+                            Command="{Binding GoToAdminCommand}"
+                            IsVisible="{Binding IsAdmin}"
+                            VerticalOptions="Center" />
+
+                        <!-- Logout -->
+                        <Button
+                            Grid.Column="3"
                             Text="⏻"
                             FontSize="16"
                             WidthRequest="32"

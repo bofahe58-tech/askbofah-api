@@ -37,6 +37,7 @@ namespace AskBofah
             builder.Services.AddTransient<ChatViewModel>();
             builder.Services.AddTransient<ForgotPasswordViewModel>();
             builder.Services.AddTransient<MainViewModel>();
+            builder.Services.AddTransient<AdminViewModel>();
 
             // =====================================================
             // PAGES
@@ -45,6 +46,7 @@ namespace AskBofah
             builder.Services.AddTransient<RegisterPage>();
             builder.Services.AddTransient<ForgotPasswordPage>();
             builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<AdminPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
