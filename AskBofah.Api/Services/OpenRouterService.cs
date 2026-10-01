@@ -8,6 +8,7 @@ namespace AskBofah.Api.Services
     {
         private readonly HttpClient _http;
         private readonly IConfiguration _config;
+        private readonly string _baseUrl;
 
         public OpenRouterService(HttpClient http, IConfiguration config)
         {
@@ -17,7 +18,11 @@ namespace AskBofah.Api.Services
             var apiKey = _config["OpenRouter:ApiKey"]
                 ?? throw new InvalidOperationException("OpenRouter API key not configured.");
 
-            _http.BaseAddress = new Uri(_config["OpenRouter:BaseUrl"]!);
+            // Store base URL separately, don't set BaseAddress
+            // (avoids the trailing-slash concatenation bug)
+            _baseUrl = (_config["OpenRouter:BaseUrl"] ?? "https://openrouter.ai/api/v1")
+                .TrimEnd('/');
+
             _http.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", apiKey);
             _http.DefaultRequestHeaders.Add("HTTP-Referer", "https://askbofah.app");
@@ -25,19 +30,20 @@ namespace AskBofah.Api.Services
             _http.Timeout = TimeSpan.FromMinutes(5);
         }
 
-        /// <summary>
-        /// Streams a completion from OpenRouter. Yields tokens as they arrive.
-        /// </summary>
         public async IAsyncEnumerable<string> StreamChatAsync(
             List<(string role, string content)> messages,
             string? model = null)
         {
-            var chosenModel = model ?? _config["OpenRouter:DefaultModel"] ?? "openai/gpt-4o-mini";
+            var chosenModel = model
+                ?? _config["OpenRouter:DefaultModel"]
+                ?? "openai/gpt-4o-mini";
 
             var body = new
             {
                 model = chosenModel,
-                messages = messages.Select(m => new { role = m.role, content = m.content }).ToArray(),
+                messages = messages
+                    .Select(m => new { role = m.role, content = m.content })
+                    .ToArray(),
                 stream = true,
                 temperature = 0.7
             };
@@ -45,7 +51,10 @@ namespace AskBofah.Api.Services
             var json = JsonSerializer.Serialize(body);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var request = new HttpRequestMessage(HttpMethod.Post, "chat/completions")
+            // Build the FULL URL here
+            var fullUrl = $"{_baseUrl}/chat/completions";
+
+            var request = new HttpRequestMessage(HttpMethod.Post, fullUrl)
             {
                 Content = content
             };
