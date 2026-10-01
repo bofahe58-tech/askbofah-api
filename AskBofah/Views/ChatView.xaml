@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="AskBofah.Views.ChatView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:AskBofah.Models"
+    xmlns:vm="clr-namespace:AskBofah.ViewModels"
+    x:Name="ChatRoot"
+    x:DataType="vm:ChatViewModel"
+    BackgroundColor="{StaticResource WorkspaceBackground}">
+
+    <Grid RowDefinitions="*,Auto">
+
+        <!-- ===================================================== -->
+        <!-- MESSAGES                                              -->
+        <!-- ===================================================== -->
+        <CollectionView
+            x:Name="MessagesView"
+            Grid.Row="0"
+            ItemsSource="{Binding Messages}"
+            SelectionMode="None"
+            Margin="30,24">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="22" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:ChatMessage">
+                    <Grid Padding="0,2">
+
+                        <!-- USER MESSAGE -->
+                        <Border
+                            IsVisible="{Binding IsUser}"
+                            HorizontalOptions="End"
+                            MaximumWidthRequest="720"
+                            BackgroundColor="{StaticResource UserBubble}"
+                            StrokeThickness="0"
+                            Padding="16,13">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20" />
+                            </Border.StrokeShape>
+                            <VerticalStackLayout Spacing="8">
+                                <Label
+                                    Text="{Binding Text}"
+                                    TextColor="{StaticResource TextPrimary}"
+                                    FontSize="15"
+                                    LineHeight="1.35"
+                                    LineBreakMode="WordWrap" />
+                                <Label
+                                    Text="{Binding TimestampDisplay}"
+                                    TextColor="{StaticResource TextMuted}"
+                                    FontSize="10"
+                                    HorizontalOptions="End" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- ASSISTANT MESSAGE -->
+                        <Grid
+                            IsVisible="{Binding IsUser, Converter={StaticResource InverseBoolConverter}}"
+                            MaximumWidthRequest="760"
+                            HorizontalOptions="Start"
+                            ColumnDefinitions="Auto,*"
+                            ColumnSpacing="12">
+
+                            <Border
+                                Grid.Column="0"
+                                WidthRequest="32"
+                                HeightRequest="32"
+                                BackgroundColor="{StaticResource AssistantAvatar}"
+                                StrokeThickness="0"
+                                VerticalOptions="Start">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="16" />
+                                </Border.StrokeShape>
+                                <Label
+                                    Text="✦"
+                                    FontSize="15"
+                                    TextColor="{StaticResource BrandTeal}"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center" />
+                            </Border>
+
+                            <VerticalStackLayout Grid.Column="1" Spacing="8">
+                                <Label
+                                    Text="Ask Bofah"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource TextPrimary}" />
+
+                                <Label
+                                    Text="{Binding Text}"
+                                    TextColor="{StaticResource TextPrimary}"
+                                    FontSize="15"
+                                    LineHeight="1.45"
+                                    LineBreakMode="WordWrap" />
+
+                                <HorizontalStackLayout Spacing="16">
+                                    <Button
+                                        Text="Copy"
+                                        Command="{Binding Source={x:Reference ChatRoot}, Path=BindingContext.CopyMessageCommand}"
+                                        CommandParameter="{Binding .}"
+                                        Style="{StaticResource MessageActionButton}" />
+
+                                    <Button
+                                        Text="Share"
+                                        Command="{Binding Source={x:Reference ChatRoot}, Path=BindingContext.ShareMessageCommand}"
+                                        CommandParameter="{Binding .}"
+                                        Style="{StaticResource MessageActionButton}" />
+
+                                    <Button
+                                        Text="Save"
+                                        Command="{Binding Source={x:Reference ChatRoot}, Path=BindingContext.DownloadMessageCommand}"
+                                        CommandParameter="{Binding .}"
+                                        Style="{StaticResource MessageActionButton}" />
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- ===================================================== -->
+        <!-- COMPOSER                                              -->
+        <!-- ===================================================== -->
+        <Grid
+            Grid.Row="1"
+            Padding="0,18,0,18"
+            BackgroundColor="{StaticResource WorkspaceBackground}">
+
+            <VerticalStackLayout
+                MaximumWidthRequest="820"
+                HorizontalOptions="Center"
+                Spacing="8">
+
+                <Border
+                    BackgroundColor="{StaticResource ComposerBackground}"
+                    Stroke="{StaticResource ComposerBorder}"
+                    StrokeThickness="1"
+                    Padding="10,8">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="24" />
+                    </Border.StrokeShape>
+
+                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
+                        <Button
+                            Grid.Column="0"
+                            Text="+"
+                            Style="{StaticResource ComposerIconButton}" />
+
+                        <Entry
+                            Grid.Column="1"
+                            Text="{Binding InputText}"
+                            Placeholder="Ask anything"
+                            PlaceholderColor="{StaticResource TextMuted}"
+                            TextColor="{StaticResource TextPrimary}"
+                            FontSize="15"
+                            VerticalOptions="Center"
+                            BackgroundColor="Transparent"
+                            ReturnType="Send"
+                            ReturnCommand="{Binding SendCommand}" />
+
+                        <Button
+                            Grid.Column="2"
+                            Text="↑"
+                            Style="{StaticResource SendButton}"
+                            Command="{Binding SendCommand}" />
+                    </Grid>
+                </Border>
+
+                <Label
+                    Text="Ask Bofah can make mistakes. Check important information."
+                    FontSize="10"
+                    TextColor="{StaticResource TextMuted}"
+                    HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentView>

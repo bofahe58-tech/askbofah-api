@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="AskBofah.Views.RegisterPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:AskBofah.ViewModels"
+    x:DataType="vm:RegisterViewModel"
+    Background="{StaticResource AuthBackgroundGradient}"
+    Shell.NavBarIsVisible="False">
+
+    <Grid>
+
+        <!-- Ambient glow -->
+
+        <Ellipse
+            WidthRequest="600"
+            HeightRequest="600"
+            Fill="{StaticResource GlowBrush}"
+            Opacity="0.08"
+            HorizontalOptions="End"
+            VerticalOptions="Start"
+            TranslationX="300"
+            TranslationY="-300" />
+
+        <Ellipse
+            WidthRequest="450"
+            HeightRequest="450"
+            Fill="{StaticResource GlowBrush}"
+            Opacity="0.06"
+            HorizontalOptions="Start"
+            VerticalOptions="End"
+            TranslationX="-230"
+            TranslationY="250" />
+
+        <!-- ===================================================== -->
+        <!-- DESKTOP                                               -->
+        <!-- ===================================================== -->
+
+        <Grid
+            IsVisible="{OnIdiom Phone=False, Tablet=True, Desktop=True}"
+            ColumnDefinitions="1.05*,0.95*">
+
+            <!-- Brand -->
+
+            <Grid
+                Grid.Column="0"
+                Padding="70,55">
+
+                <VerticalStackLayout
+                    VerticalOptions="Center"
+                    MaximumWidthRequest="610"
+                    Spacing="28">
+
+                    <HorizontalStackLayout
+                        Spacing="12">
+
+                        <Border
+                            WidthRequest="46"
+                            HeightRequest="46"
+                            Background="{StaticResource BrandGradient}"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 14">
+
+                            <Label
+                                Text="A"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                        </Border>
+
+                        <Label
+                            Text="ASK BOFAH"
+                            Style="{StaticResource AuthBrandName}"
+                            VerticalOptions="Center" />
+
+                    </HorizontalStackLayout>
+
+                    <VerticalStackLayout
+                        Spacing="14">
+
+                        <Label
+                            Text="Build your&#10;intelligent workspace."
+                            Style="{StaticResource AuthHeroTitle}" />
+
+                        <Label
+                            Text="Create one account and bring your questions, conversations and learning experience together."
+                            Style="{StaticResource AuthSubtitle}"
+                            MaximumWidthRequest="500" />
+
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout
+                        Spacing="12">
+
+                        <Border
+                            BackgroundColor="#0D1522"
+                            Stroke="{StaticResource Border}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 18"
+                            Padding="18">
+
+                            <Grid
+                                ColumnDefinitions="Auto,*"
+                                ColumnSpacing="15">
+
+                                <Border
+                                    WidthRequest="38"
+                                    HeightRequest="38"
+                                    BackgroundColor="#132C2D"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 11">
+
+                                    <Label
+                                        Text="01"
+                                        FontSize="11"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource BrandTealBright}"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center" />
+
+                                </Border>
+
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Spacing="3">
+
+                                    <Label
+                                        Text="One intelligent account"
+                                        FontSize="15"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource TextPrimary}" />
+
+                                    <Label
+                                        Text="Everything you need, organized in one place."
+                                        FontSize="12"
+                                        TextColor="{StaticResource TextSecondary}" />
+
+                                </VerticalStackLayout>
+
+                            </Grid>
+
+                        </Border>
+
+                        <Border
+                            BackgroundColor="#0D1522"
+                            Stroke="{StaticResource Border}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 18"
+                            Padding="18">
+
+                            <Grid
+                                ColumnDefinitions="Auto,*"
+                                ColumnSpacing="15">
+
+                                <Border
+                                    WidthRequest="38"
+                                    HeightRequest="38"
+                                    BackgroundColor="#151C35"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 11">
+
+                                    <Label
+                                        Text="02"
+                                        FontSize="11"
+                                        FontAttributes="Bold"
+                                        TextColor="#A5B4FC"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center" />
+
+                                </Border>
+
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Spacing="3">
+
+                                    <Label
+                                        Text="Designed for learning"
+                                        FontSize="15"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource TextPrimary}" />
+
+                                    <Label
+                                        Text="Ask questions, explore ideas and learn at your pace."
+                                        FontSize="12"
+                                        TextColor="{StaticResource TextSecondary}" />
+
+                                </VerticalStackLayout>
+
+                            </Grid>
+
+                        </Border>
+
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+            <!-- Registration -->
+
+            <Grid
+                Grid.Column="1"
+                Padding="40,35,70,35">
+
+                <ScrollView
+                    VerticalScrollBarVisibility="Never">
+
+                    <Border
+                        Style="{StaticResource AuthCard}"
+                        MaximumWidthRequest="520"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+
+                        <VerticalStackLayout
+                            Spacing="17">
+
+                            <VerticalStackLayout
+                                Spacing="6">
+
+                                <Label
+                                    Text="Create your account"
+                                    Style="{StaticResource AuthPageTitle}" />
+
+                                <Label
+                                    Text="It only takes a minute to get started."
+                                    Style="{StaticResource AuthSubtitle}" />
+
+                            </VerticalStackLayout>
+
+                            <!-- Name -->
+
+                            <VerticalStackLayout
+                                Spacing="0">
+
+                                <Label
+                                    Text="FULL NAME"
+                                    Style="{StaticResource InputLabel}" />
+
+                                <Border
+                                    Style="{StaticResource AuthInputBorder}">
+
+                                    <Entry
+                                        Text="{Binding FullName}"
+                                        Placeholder="Bofah Emmanuel"
+                                        Style="{StaticResource AuthEntry}" />
+
+                                </Border>
+
+                            </VerticalStackLayout>
+
+                            <!-- Email -->
+
+                            <VerticalStackLayout
+                                Spacing="0">
+
+                                <Label
+                                    Text="EMAIL ADDRESS"
+                                    Style="{StaticResource InputLabel}" />
+
+                                <Border
+                                    Style="{StaticResource AuthInputBorder}">
+
+                                    <Entry
+                                        Text="{Binding Email}"
+                                        Placeholder="you@example.com"
+                                        Keyboard="Email"
+                                        Style="{StaticResource AuthEntry}" />
+
+                                </Border>
+
+                            </VerticalStackLayout>
+
+                            <!-- Password -->
+
+                            <VerticalStackLayout
+                                Spacing="0">
+
+                                <Label
+                                    Text="PASSWORD"
+                                    Style="{StaticResource InputLabel}" />
+
+                                <Border
+                                    Style="{StaticResource AuthInputBorder}">
+
+                                    <Grid
+                                        ColumnDefinitions="*,Auto">
+
+                                        <Entry
+                                            Text="{Binding Password}"
+                                            Placeholder="At least 6 characters"
+                                            IsPassword="{Binding IsPasswordHidden}"
+                                            Style="{StaticResource AuthEntry}" />
+
+                                        <Button
+                                            Grid.Column="1"
+                                            Text="Show"
+                                            TextColor="{StaticResource TextSecondary}"
+                                            BackgroundColor="Transparent"
+                                            FontSize="12"
+                                            FontAttributes="Bold"
+                                            Padding="8,0"
+                                            Command="{Binding TogglePasswordCommand}" />
+
+                                    </Grid>
+
+                                </Border>
+
+                            </VerticalStackLayout>
+
+                            <!-- Confirm -->
+
+                            <VerticalStackLayout
+                                Spacing="0">
+
+                                <Label
+                                    Text="CONFIRM PASSWORD"
+                                    Style="{StaticResource InputLabel}" />
+
+                                <Border
+                                    Style="{StaticResource AuthInputBorder}">
+
+                                    <Grid
+                                        ColumnDefinitions="*,Auto">
+
+                                        <Entry
+                                            Text="{Binding ConfirmPassword}"
+                                            Placeholder="Repeat your password"
+                                            IsPassword="{Binding IsConfirmPasswordHidden}"
+                                            Style="{StaticResource AuthEntry}" />
+
+                                        <Button
+                                            Grid.Column="1"
+                                            Text="Show"
+                                            TextColor="{StaticResource TextSecondary}"
+                                            BackgroundColor="Transparent"
+                                            FontSize="12"
+                                            FontAttributes="Bold"
+                                            Padding="8,0"
+                                            Command="{Binding ToggleConfirmPasswordCommand}" />
+
+                                    </Grid>
+
+                                </Border>
+
+                            </VerticalStackLayout>
+
+                            <!-- Error -->
+
+                            <Border
+                                IsVisible="{Binding HasError}"
+                                Style="{StaticResource ErrorContainer}">
+
+                                <Label
+                                    Text="{Binding ErrorMessage}"
+                                    FontSize="13"
+                                    TextColor="#FFB0BC" />
+
+                            </Border>
+
+                            <!-- Create -->
+
+                            <Button
+                                Text="{Binding RegisterButtonText}"
+                                Style="{StaticResource PrimaryAuthButton}"
+                                Command="{Binding RegisterCommand}"
+                                Margin="0,3,0,0" />
+
+                            <ActivityIndicator
+                                IsVisible="{Binding IsBusy}"
+                                IsRunning="{Binding IsBusy}"
+                                Color="{StaticResource BrandTealBright}"
+                                HeightRequest="22" />
+
+                            <!-- Divider -->
+
+                            <Grid
+                                ColumnDefinitions="*,Auto,*"
+                                ColumnSpacing="12">
+
+                                <BoxView
+                                    HeightRequest="1"
+                                    Color="{StaticResource Border}" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Text="OR"
+                                    FontSize="10"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource TextMuted}"
+                                    VerticalOptions="Center" />
+
+                                <BoxView
+                                    Grid.Column="2"
+                                    HeightRequest="1"
+                                    Color="{StaticResource Border}" />
+
+                            </Grid>
+
+                            <Button
+                                Text="Sign up with Google"
+                                Style="{StaticResource GoogleButton}"
+                                Command="{Binding GoogleRegisterCommand}" />
+
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center"
+                                Spacing="5">
+
+                                <Label
+                                    Text="Already have an account?"
+                                    FontSize="13"
+                                    TextColor="{StaticResource TextMuted}"
+                                    VerticalOptions="Center" />
+
+                                <Button
+                                    Text="Sign in"
+                                    Style="{StaticResource TextLinkButton}"
+                                    Command="{Binding GoToLoginCommand}"
+                                    HeightRequest="28" />
+
+                            </HorizontalStackLayout>
+
+                            <Label
+                                Text="By creating an account, you agree to our Terms and Privacy Policy."
+                                FontSize="10"
+                                TextColor="{StaticResource TextMuted}"
+                                HorizontalTextAlignment="Center"
+                                Margin="20,2,20,0" />
+
+                        </VerticalStackLayout>
+
+                    </Border>
+
+                </ScrollView>
+
+            </Grid>
+
+        </Grid>
+
+        <!-- ===================================================== -->
+        <!-- MOBILE                                                 -->
+        <!-- ===================================================== -->
+
+        <ScrollView
+            IsVisible="{OnIdiom Phone=True, Tablet=False, Desktop=False}"
+            VerticalScrollBarVisibility="Never">
+
+            <VerticalStackLayout
+                Padding="24,48,24,32"
+                Spacing="22">
+
+                <HorizontalStackLayout
+                    Spacing="11">
+
+                    <Border
+                        WidthRequest="42"
+                        HeightRequest="42"
+                        Background="{StaticResource BrandGradient}"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 13">
+
+                        <Label
+                            Text="A"
+                            FontSize="23"
+                            FontAttributes="Bold"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center" />
+
+                    </Border>
+
+                    <Label
+                        Text="ASK BOFAH"
+                        Style="{StaticResource AuthBrandName}"
+                        VerticalOptions="Center" />
+
+                </HorizontalStackLayout>
+
+                <VerticalStackLayout
+                    Spacing="7"
+                    Margin="0,8,0,0">
+
+                    <Label
+                        Text="Create your account"
+                        Style="{StaticResource AuthPageTitle}" />
+
+                    <Label
+                        Text="Join Ask Bofah and start learning with AI."
+                        Style="{StaticResource AuthSubtitle}" />
+
+                </VerticalStackLayout>
+
+                <Border
+                    Style="{StaticResource AuthCard}"
+                    Padding="22">
+
+                    <VerticalStackLayout
+                        Spacing="17">
+
+                        <VerticalStackLayout
+                            Spacing="0">
+
+                            <Label
+                                Text="FULL NAME"
+                                Style="{StaticResource InputLabel}" />
+
+                            <Border
+                                Style="{StaticResource AuthInputBorder}">
+
+                                <Entry
+                                    Text="{Binding FullName}"
+                                    Placeholder="Bofah Emmanuel"
+                                    Style="{StaticResource AuthEntry}" />
+
+                            </Border>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Spacing="0">
+
+                            <Label
+                                Text="EMAIL ADDRESS"
+                                Style="{StaticResource InputLabel}" />
+
+                            <Border
+                                Style="{StaticResource AuthInputBorder}">
+
+                                <Entry
+                                    Text="{Binding Email}"
+                                    Placeholder="you@example.com"
+                                    Keyboard="Email"
+                                    Style="{StaticResource AuthEntry}" />
+
+                            </Border>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Spacing="0">
+
+                            <Label
+                                Text="PASSWORD"
+                                Style="{StaticResource InputLabel}" />
+
+                            <Border
+                                Style="{StaticResource AuthInputBorder}">
+
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+
+                                    <Entry
+                                        Text="{Binding Password}"
+                                        Placeholder="At least 6 characters"
+                                        IsPassword="{Binding IsPasswordHidden}"
+                                        Style="{StaticResource AuthEntry}" />
+
+                                    <Button
+                                        Grid.Column="1"
+                                        Text="Show"
+                                        TextColor="{StaticResource TextSecondary}"
+                                        BackgroundColor="Transparent"
+                                        FontSize="12"
+                                        FontAttributes="Bold"
+                                        Padding="8,0"
+                                        Command="{Binding TogglePasswordCommand}" />
+
+                                </Grid>
+
+                            </Border>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Spacing="0">
+
+                            <Label
+                                Text="CONFIRM PASSWORD"
+                                Style="{StaticResource InputLabel}" />
+
+                            <Border
+                                Style="{StaticResource AuthInputBorder}">
+
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+
+                                    <Entry
+                                        Text="{Binding ConfirmPassword}"
+                                        Placeholder="Repeat your password"
+                                        IsPassword="{Binding IsConfirmPasswordHidden}"
+                                        Style="{StaticResource AuthEntry}" />
+
+                                    <Button
+                                        Grid.Column="1"
+                                        Text="Show"
+                                        TextColor="{StaticResource TextSecondary}"
+                                        BackgroundColor="Transparent"
+                                        FontSize="12"
+                                        FontAttributes="Bold"
+                                        Padding="8,0"
+                                        Command="{Binding ToggleConfirmPasswordCommand}" />
+
+                                </Grid>
+
+                            </Border>
+
+                        </VerticalStackLayout>
+
+                        <Border
+                            IsVisible="{Binding HasError}"
+                            Style="{StaticResource ErrorContainer}">
+
+                            <Label
+                                Text="{Binding ErrorMessage}"
+                                FontSize="13"
+                                TextColor="#FFB0BC" />
+
+                        </Border>
+
+                        <Button
+                            Text="{Binding RegisterButtonText}"
+                            Style="{StaticResource PrimaryAuthButton}"
+                            Command="{Binding RegisterCommand}" />
+
+                        <ActivityIndicator
+                            IsVisible="{Binding IsBusy}"
+                            IsRunning="{Binding IsBusy}"
+                            Color="{StaticResource BrandTealBright}"
+                            HeightRequest="22" />
+
+                        <Grid
+                            ColumnDefinitions="*,Auto,*"
+                            ColumnSpacing="12">
+
+                            <BoxView
+                                HeightRequest="1"
+                                Color="{StaticResource Border}" />
+
+                            <Label
+                                Grid.Column="1"
+                                Text="OR"
+                                FontSize="10"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource TextMuted}"
+                                VerticalOptions="Center" />
+
+                            <BoxView
+                                Grid.Column="2"
+                                HeightRequest="1"
+                                Color="{StaticResource Border}" />
+
+                        </Grid>
+
+                        <Button
+                            Text="Sign up with Google"
+                            Style="{StaticResource GoogleButton}"
+                            Command="{Binding GoogleRegisterCommand}" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+                <HorizontalStackLayout
+                    HorizontalOptions="Center"
+                    Spacing="5">
+
+                    <Label
+                        Text="Already have an account?"
+                        FontSize="13"
+                        TextColor="{StaticResource TextMuted}"
+                        VerticalOptions="Center" />
+
+                    <Button
+                        Text="Sign in"
+                        Style="{StaticResource TextLinkButton}"
+                        Command="{Binding GoToLoginCommand}"
+                        HeightRequest="28" />
+
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,567 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AskBofah</name>
+    </assembly>
+    <members>
+        <member name="T:AskBofah.Models.ChatMessage">
+            <inheritdoc/>
+        </member>
+        <member name="P:AskBofah.Models.ChatMessage.Text">
+            <inheritdoc cref="F:AskBofah.Models.ChatMessage.text"/>
+        </member>
+        <member name="P:AskBofah.Models.ChatMessage.IsUser">
+            <inheritdoc cref="F:AskBofah.Models.ChatMessage.isUser"/>
+        </member>
+        <member name="P:AskBofah.Models.ChatMessage.IsStreaming">
+            <inheritdoc cref="F:AskBofah.Models.ChatMessage.isStreaming"/>
+        </member>
+        <member name="P:AskBofah.Models.ChatMessage.Timestamp">
+            <inheritdoc cref="F:AskBofah.Models.ChatMessage.timestamp"/>
+        </member>
+        <member name="T:AskBofah.ViewModels.ChatViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.InputText">
+            <inheritdoc cref="F:AskBofah.ViewModels.ChatViewModel.inputText"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.Greeting">
+            <inheritdoc cref="F:AskBofah.ViewModels.ChatViewModel.greeting"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.IsBusy">
+            <inheritdoc cref="F:AskBofah.ViewModels.ChatViewModel.isBusy"/>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.sendCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.SendCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.SendCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.SendAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.regenerateCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.RegenerateCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.RegenerateCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.RegenerateAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.clearChatCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.ClearChatCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.ClearChatCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.ClearChatAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.copyMessageCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.CopyMessageCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.CopyMessageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.CopyMessageAsync(AskBofah.Models.ChatMessage)"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.shareMessageCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.ShareMessageCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.ShareMessageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.ShareMessageAsync(AskBofah.Models.ChatMessage)"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.downloadMessageCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.DownloadMessageCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.DownloadMessageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.DownloadMessageAsync(AskBofah.Models.ChatMessage)"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.logoutCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.LogoutCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.LogoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.LogoutAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ChatViewModel.newChatCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ChatViewModel.NewChatCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ChatViewModel.NewChatCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ChatViewModel.NewChat"/>.</summary>
+        </member>
+        <member name="T:AskBofah.ViewModels.ForgotPasswordViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ForgotPasswordViewModel.Email">
+            <inheritdoc cref="F:AskBofah.ViewModels.ForgotPasswordViewModel.email"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ForgotPasswordViewModel.ErrorMessage">
+            <inheritdoc cref="F:AskBofah.ViewModels.ForgotPasswordViewModel.errorMessage"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ForgotPasswordViewModel.SuccessMessage">
+            <inheritdoc cref="F:AskBofah.ViewModels.ForgotPasswordViewModel.successMessage"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ForgotPasswordViewModel.HasError">
+            <inheritdoc cref="F:AskBofah.ViewModels.ForgotPasswordViewModel.hasError"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ForgotPasswordViewModel.IsSent">
+            <inheritdoc cref="F:AskBofah.ViewModels.ForgotPasswordViewModel.isSent"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.ForgotPasswordViewModel.IsBusy">
+            <inheritdoc cref="F:AskBofah.ViewModels.ForgotPasswordViewModel.isBusy"/>
+        </member>
+        <member name="M:AskBofah.ViewModels.ForgotPasswordViewModel.OnIsSentChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:AskBofah.ViewModels.ForgotPasswordViewModel.IsSent"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:AskBofah.ViewModels.ForgotPasswordViewModel.IsSent"/> is changed.</remarks>
+        </member>
+        <member name="M:AskBofah.ViewModels.ForgotPasswordViewModel.OnIsBusyChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:AskBofah.ViewModels.ForgotPasswordViewModel.IsBusy"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:AskBofah.ViewModels.ForgotPasswordViewModel.IsBusy"/> is changed.</remarks>
+        </member>
+        <member name="F:AskBofah.ViewModels.ForgotPasswordViewModel.sendResetLinkCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ForgotPasswordViewModel.SendResetLinkCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ForgotPasswordViewModel.SendResetLinkCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ForgotPasswordViewModel.SendResetLinkAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ForgotPasswordViewModel.resendCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ForgotPasswordViewModel.ResendCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ForgotPasswordViewModel.ResendCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ForgotPasswordViewModel.ResendAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.ForgotPasswordViewModel.goBackCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.ForgotPasswordViewModel.GoBackCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.ForgotPasswordViewModel.GoBackCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.ForgotPasswordViewModel.GoBackAsync"/>.</summary>
+        </member>
+        <member name="T:AskBofah.ViewModels.LoginViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:AskBofah.ViewModels.LoginViewModel.Email">
+            <inheritdoc cref="F:AskBofah.ViewModels.LoginViewModel.email"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.LoginViewModel.Password">
+            <inheritdoc cref="F:AskBofah.ViewModels.LoginViewModel.password"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.LoginViewModel.ErrorMessage">
+            <inheritdoc cref="F:AskBofah.ViewModels.LoginViewModel.errorMessage"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.LoginViewModel.HasError">
+            <inheritdoc cref="F:AskBofah.ViewModels.LoginViewModel.hasError"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.LoginViewModel.IsBusy">
+            <inheritdoc cref="F:AskBofah.ViewModels.LoginViewModel.isBusy"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.LoginViewModel.IsPasswordHidden">
+            <inheritdoc cref="F:AskBofah.ViewModels.LoginViewModel.isPasswordHidden"/>
+        </member>
+        <member name="M:AskBofah.ViewModels.LoginViewModel.OnIsBusyChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:AskBofah.ViewModels.LoginViewModel.IsBusy"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:AskBofah.ViewModels.LoginViewModel.IsBusy"/> is changed.</remarks>
+        </member>
+        <member name="F:AskBofah.ViewModels.LoginViewModel.togglePasswordCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.LoginViewModel.TogglePasswordCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.LoginViewModel.TogglePasswordCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.LoginViewModel.TogglePassword"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.LoginViewModel.loginCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.LoginViewModel.LoginCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.LoginViewModel.LoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.LoginViewModel.LoginAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.LoginViewModel.goToRegisterCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.LoginViewModel.GoToRegisterCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.LoginViewModel.GoToRegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.LoginViewModel.GoToRegisterAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.LoginViewModel.goToForgotPasswordCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.LoginViewModel.GoToForgotPasswordCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.LoginViewModel.GoToForgotPasswordCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.LoginViewModel.GoToForgotPasswordAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.LoginViewModel.googleLoginCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.LoginViewModel.GoogleLoginCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.LoginViewModel.GoogleLoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.LoginViewModel.GoogleLoginAsync"/>.</summary>
+        </member>
+        <member name="T:AskBofah.ViewModels.MainViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:AskBofah.ViewModels.MainViewModel.ActiveSection">
+            <inheritdoc cref="F:AskBofah.ViewModels.MainViewModel.activeSection"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.MainViewModel.PageTitle">
+            <inheritdoc cref="F:AskBofah.ViewModels.MainViewModel.pageTitle"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.MainViewModel.PageSubtitle">
+            <inheritdoc cref="F:AskBofah.ViewModels.MainViewModel.pageSubtitle"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.MainViewModel.IsSidebarExpanded">
+            <inheritdoc cref="F:AskBofah.ViewModels.MainViewModel.isSidebarExpanded"/>
+        </member>
+        <member name="F:AskBofah.ViewModels.MainViewModel.navigateCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.MainViewModel.NavigateCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.MainViewModel.NavigateCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:AskBofah.ViewModels.MainViewModel.Navigate(System.String)"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.MainViewModel.toggleSidebarCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.MainViewModel.ToggleSidebarCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.MainViewModel.ToggleSidebarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.MainViewModel.ToggleSidebar"/>.</summary>
+        </member>
+        <member name="T:AskBofah.ViewModels.RegisterViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.FullName">
+            <inheritdoc cref="F:AskBofah.ViewModels.RegisterViewModel.fullName"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.Email">
+            <inheritdoc cref="F:AskBofah.ViewModels.RegisterViewModel.email"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.Password">
+            <inheritdoc cref="F:AskBofah.ViewModels.RegisterViewModel.password"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.ConfirmPassword">
+            <inheritdoc cref="F:AskBofah.ViewModels.RegisterViewModel.confirmPassword"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.ErrorMessage">
+            <inheritdoc cref="F:AskBofah.ViewModels.RegisterViewModel.errorMessage"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.HasError">
+            <inheritdoc cref="F:AskBofah.ViewModels.RegisterViewModel.hasError"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.IsBusy">
+            <inheritdoc cref="F:AskBofah.ViewModels.RegisterViewModel.isBusy"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.IsPasswordHidden">
+            <inheritdoc cref="F:AskBofah.ViewModels.RegisterViewModel.isPasswordHidden"/>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.IsConfirmPasswordHidden">
+            <inheritdoc cref="F:AskBofah.ViewModels.RegisterViewModel.isConfirmPasswordHidden"/>
+        </member>
+        <member name="M:AskBofah.ViewModels.RegisterViewModel.OnIsBusyChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:AskBofah.ViewModels.RegisterViewModel.IsBusy"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:AskBofah.ViewModels.RegisterViewModel.IsBusy"/> is changed.</remarks>
+        </member>
+        <member name="F:AskBofah.ViewModels.RegisterViewModel.togglePasswordCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.RegisterViewModel.TogglePasswordCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.TogglePasswordCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.RegisterViewModel.TogglePassword"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.RegisterViewModel.toggleConfirmPasswordCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.RegisterViewModel.ToggleConfirmPasswordCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.ToggleConfirmPasswordCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.RegisterViewModel.ToggleConfirmPassword"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.RegisterViewModel.registerCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.RegisterViewModel.RegisterCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.RegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.RegisterViewModel.RegisterAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.RegisterViewModel.goToLoginCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.RegisterViewModel.GoToLoginCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.GoToLoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.RegisterViewModel.GoToLoginAsync"/>.</summary>
+        </member>
+        <member name="F:AskBofah.ViewModels.RegisterViewModel.googleRegisterCommand">
+            <summary>The backing field for <see cref="P:AskBofah.ViewModels.RegisterViewModel.GoogleRegisterCommand"/>.</summary>
+        </member>
+        <member name="P:AskBofah.ViewModels.RegisterViewModel.GoogleRegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AskBofah.ViewModels.RegisterViewModel.GoogleRegisterAsync"/>.</summary>
+        </member>
+        <member name="T:AskBofah.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_InputView.TextColorTo(Microsoft.Maui.Controls.InputView,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Text">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Text" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsUser">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsUser" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsStreaming">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsStreaming" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Timestamp">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Timestamp" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.InputText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "InputText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Greeting">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Greeting" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ErrorMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ErrorMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SuccessMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SuccessMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HasError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HasError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsSent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsSent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsPasswordHidden">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsPasswordHidden" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ActiveSection">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ActiveSection" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PageTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PageTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PageSubtitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PageSubtitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsSidebarExpanded">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsSidebarExpanded" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FullName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FullName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConfirmPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsConfirmPasswordHidden">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsConfirmPasswordHidden" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Text">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Text" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsUser">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsUser" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsStreaming">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsStreaming" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Timestamp">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Timestamp" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.InputText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "InputText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Greeting">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Greeting" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ErrorMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ErrorMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SuccessMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SuccessMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HasError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HasError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsSent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsSent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsPasswordHidden">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsPasswordHidden" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ActiveSection">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ActiveSection" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PageTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PageTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PageSubtitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PageSubtitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsSidebarExpanded">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsSidebarExpanded" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FullName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FullName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConfirmPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsConfirmPasswordHidden">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsConfirmPasswordHidden" generated properties.</summary>
+        </member>
+    </members>
+</doc>

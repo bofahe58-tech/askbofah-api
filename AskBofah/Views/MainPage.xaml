@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AskBofah.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:AskBofah.ViewModels"
+    x:DataType="vm:MainViewModel"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource WorkspaceBackground}">
+
+    <Grid
+        x:Name="RootGrid"
+        ColumnDefinitions="264,*"
+        BackgroundColor="{StaticResource WorkspaceBackground}">
+
+        <!-- ===================================================== -->
+        <!-- LEFT SIDEBAR                                           -->
+        <!-- ===================================================== -->
+
+        <Border
+            x:Name="Sidebar"
+            Grid.Column="0"
+            BackgroundColor="{StaticResource SidebarBackground}"
+            Stroke="{StaticResource SidebarBorder}"
+            StrokeThickness="1"
+            Padding="10,12,10,10">
+
+            <Grid RowDefinitions="Auto,Auto,Auto,*,Auto">
+
+                <!-- BRAND -->
+                <Grid
+                    Grid.Row="0"
+                    ColumnDefinitions="Auto,*"
+                    Margin="8,4,8,18"
+                    ColumnSpacing="10">
+
+                    <Border
+                        WidthRequest="34"
+                        HeightRequest="34"
+                        Background="{StaticResource BrandGradient}"
+                        StrokeThickness="0">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="11" />
+                        </Border.StrokeShape>
+
+                        <Label
+                            Text="✦"
+                            FontSize="18"
+                            TextColor="White"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center" />
+
+                    </Border>
+
+                    <Label
+                        Grid.Column="1"
+                        Text="Ask Bofah"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource TextPrimary}"
+                        VerticalOptions="Center" />
+
+                </Grid>
+
+                <!-- NEW CHAT -->
+                <Border
+                    Grid.Row="1"
+                    BackgroundColor="{StaticResource NewChatBackground}"
+                    Stroke="{StaticResource SidebarBorder}"
+                    StrokeThickness="1"
+                    Padding="5"
+                    Margin="4,0,4,16">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10" />
+                    </Border.StrokeShape>
+
+                    <Button
+                        Text="＋   New chat"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Chat"
+                        Style="{StaticResource SidebarButton}"
+                        HorizontalOptions="Fill" />
+
+                </Border>
+
+                <!-- NAVIGATION -->
+                <VerticalStackLayout
+                    Grid.Row="2"
+                    Spacing="2"
+                    Margin="0,0,0,10">
+
+                    <Button
+                        Text="⌕   Search"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Chat"
+                        Style="{StaticResource SidebarButton}" />
+
+                    <Button
+                        Text="▧   Images"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Images"
+                        Style="{StaticResource SidebarButton}" />
+
+                    <Button
+                        Text="▥   Library"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Library"
+                        Style="{StaticResource SidebarButton}" />
+
+                    <Button
+                        Text="◷   Scheduled"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Scheduled"
+                        Style="{StaticResource SidebarButton}" />
+
+                    <Button
+                        Text="◎   Plugins"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Plugins"
+                        Style="{StaticResource SidebarButton}" />
+
+                    <Button
+                        Text="□   Projects"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Projects"
+                        Style="{StaticResource SidebarButton}" />
+
+                    <Button
+                        Text="⌘   Codex"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="Codex"
+                        Style="{StaticResource SidebarButton}" />
+
+                    <Button
+                        Text="•••   More"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="More"
+                        Style="{StaticResource SidebarButton}" />
+
+                </VerticalStackLayout>
+
+                <!-- RECENT CHATS -->
+                <ScrollView
+                    Grid.Row="3"
+                    Margin="4,4,4,10">
+
+                    <VerticalStackLayout Spacing="4">
+
+                        <Label
+                            Text="RECENTS"
+                            FontSize="10"
+                            FontAttributes="Bold"
+                            CharacterSpacing="1.2"
+                            TextColor="{StaticResource TextMuted}"
+                            Margin="12,12,8,7" />
+
+                        <Button
+                            Text="Design Auth Pages"
+                            Style="{StaticResource RecentButton}" />
+
+                        <Button
+                            Text="Create Clean PDF Copy"
+                            Style="{StaticResource RecentButton}" />
+
+                        <Button
+                            Text="Update Real Paystack Payments"
+                            Style="{StaticResource RecentButton}" />
+
+                        <Button
+                            Text="Update status UI code"
+                            Style="{StaticResource RecentButton}" />
+
+                        <Button
+                            Text="Modern dashboard"
+                            Style="{StaticResource RecentButton}" />
+
+                    </VerticalStackLayout>
+
+                </ScrollView>
+
+                <!-- USER PROFILE -->
+                <Border
+                    Grid.Row="4"
+                    BackgroundColor="{StaticResource ProfileBackground}"
+                    Stroke="{StaticResource SidebarBorder}"
+                    StrokeThickness="1"
+                    Padding="8"
+                    Margin="3,0,3,2">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+
+                    <Grid
+                        ColumnDefinitions="36,*,Auto"
+                        ColumnSpacing="8">
+
+                        <Border
+                            WidthRequest="34"
+                            HeightRequest="34"
+                            BackgroundColor="{StaticResource AvatarBackground}"
+                            StrokeThickness="0">
+
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="17" />
+                            </Border.StrokeShape>
+
+                            <Label
+                                Text="EB"
+                                FontSize="10"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center" />
+
+                        </Border>
+
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            Spacing="1">
+
+                            <Label
+                                Text="Emmanuel Bofah"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource TextPrimary}" />
+
+                            <Label
+                                Text="Free"
+                                FontSize="10"
+                                TextColor="{StaticResource TextMuted}" />
+
+                        </VerticalStackLayout>
+
+                        <Button
+                            Grid.Column="2"
+                            Text="•••"
+                            Style="{StaticResource TinyIconButton}" />
+
+                    </Grid>
+
+                </Border>
+
+            </Grid>
+
+        </Border>
+
+        <!-- ===================================================== -->
+        <!-- LARGE WORKSPACE                                        -->
+        <!-- ===================================================== -->
+
+        <Grid
+            Grid.Column="1"
+            RowDefinitions="64,*"
+            BackgroundColor="{StaticResource WorkspaceBackground}">
+
+            <!-- HEADER -->
+            <Border
+                Grid.Row="0"
+                BackgroundColor="{StaticResource WorkspaceBackground}"
+                Stroke="{StaticResource HeaderBorder}"
+                StrokeThickness="1"
+                Padding="22,0">
+
+                <Grid
+                    ColumnDefinitions="Auto,*,Auto,Auto,Auto"
+                    ColumnSpacing="10">
+
+                    <Button
+                        Grid.Column="0"
+                        Text="☰"
+                        Command="{Binding ToggleSidebarCommand}"
+                        Style="{StaticResource HeaderIconButton}" />
+
+                    <VerticalStackLayout
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        Spacing="1">
+
+                        <Label
+                            Text="{Binding PageTitle}"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource TextPrimary}" />
+
+                        <Label
+                            Text="{Binding PageSubtitle}"
+                            FontSize="10"
+                            TextColor="{StaticResource TextMuted}" />
+
+                    </VerticalStackLayout>
+
+                    <Button
+                        Grid.Column="2"
+                        Text="□"
+                        Style="{StaticResource HeaderIconButton}" />
+
+                    <Button
+                        Grid.Column="3"
+                        Text="⇧"
+                        Style="{StaticResource HeaderIconButton}" />
+
+                    <Button
+                        Grid.Column="4"
+                        Text="•••"
+                        Style="{StaticResource HeaderIconButton}" />
+
+                </Grid>
+
+            </Border>
+
+            <!-- PAGE CONTENT -->
+            <ContentView
+                x:Name="WorkspaceHost"
+                Grid.Row="1"
+                BackgroundColor="{StaticResource WorkspaceBackground}" />
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

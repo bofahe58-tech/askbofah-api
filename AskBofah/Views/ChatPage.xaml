@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AskBofah.Views.ChatPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:AskBofah.Models"
+    xmlns:vm="clr-namespace:AskBofah.ViewModels"
+    x:DataType="vm:ChatViewModel"
+    BackgroundColor="#0B1120"
+    Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <!-- HEADER -->
+        <Border Grid.Row="0" BackgroundColor="#111827" StrokeThickness="0" Padding="20,50,20,15">
+            <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10">
+                <VerticalStackLayout Grid.Column="0">
+                    <Label Text="Ask Bofah" FontSize="22" FontAttributes="Bold" TextColor="#00A3A1" />
+                    <Label Text="{Binding Greeting}" FontSize="12" TextColor="#94A3B8" />
+                </VerticalStackLayout>
+                <Button Grid.Column="1" Text="🗑" FontSize="18" BackgroundColor="Transparent"
+                        TextColor="#94A3B8" Command="{Binding ClearChatCommand}" />
+                <Button Grid.Column="2" Text="⏻" FontSize="18" BackgroundColor="Transparent"
+                        TextColor="#94A3B8" Command="{Binding LogoutCommand}" />
+            </Grid>
+        </Border>
+
+        <!-- MESSAGES -->
+        <CollectionView Grid.Row="1" x:Name="MessagesView"
+                        ItemsSource="{Binding Messages}"
+                        Margin="12,8">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:ChatMessage">
+                    <Grid Padding="0,4">
+                        <Border StrokeShape="RoundRectangle 16" Padding="16" StrokeThickness="0">
+                            <Border.Triggers>
+                                <DataTrigger TargetType="Border" Binding="{Binding IsUser}" Value="True">
+                                    <Setter Property="BackgroundColor" Value="#00A3A1" />
+                                    <Setter Property="HorizontalOptions" Value="End" />
+                                    <Setter Property="MaximumWidthRequest" Value="320" />
+                                </DataTrigger>
+                                <DataTrigger TargetType="Border" Binding="{Binding IsUser}" Value="False">
+                                    <Setter Property="BackgroundColor" Value="#1E293B" />
+                                    <Setter Property="HorizontalOptions" Value="Start" />
+                                    <Setter Property="MaximumWidthRequest" Value="340" />
+                                </DataTrigger>
+                            </Border.Triggers>
+                            <VerticalStackLayout Spacing="6">
+                                <Label Text="{Binding Text}" TextColor="#F8FAFC"
+                                       FontSize="15" LineBreakMode="WordWrap" />
+
+                                <HorizontalStackLayout Spacing="12" Margin="0,6,0,0"
+                                                       IsVisible="{Binding IsUser, Converter={StaticResource InvertBool}}">
+                                    <Button Text="Copy" FontSize="11" BackgroundColor="Transparent"
+                                            TextColor="#94A3B8" Padding="0"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ChatViewModel}}, Path=CopyMessageCommand}"
+                                            CommandParameter="{Binding .}" />
+                                    <Button Text="Share" FontSize="11" BackgroundColor="Transparent"
+                                            TextColor="#94A3B8" Padding="0"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ChatViewModel}}, Path=ShareMessageCommand}"
+                                            CommandParameter="{Binding .}" />
+                                    <Button Text="Save" FontSize="11" BackgroundColor="Transparent"
+                                            TextColor="#94A3B8" Padding="0"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ChatViewModel}}, Path=DownloadMessageCommand}"
+                                            CommandParameter="{Binding .}" />
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- INPUT BAR -->
+        <Border Grid.Row="2" BackgroundColor="#1E293B" StrokeShape="RoundRectangle 28"
+                StrokeThickness="0" Margin="12,0,12,12" Padding="8">
+            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="6">
+                <Button Grid.Column="0" Text="📎" FontSize="20" BackgroundColor="Transparent"
+                        TextColor="#94A3B8" WidthRequest="44" HeightRequest="44" />
+                <Entry Grid.Column="1" Text="{Binding InputText}" Placeholder="Message Ask Bofah..."
+                       PlaceholderColor="#64748B" TextColor="#F8FAFC"
+                       BackgroundColor="Transparent" FontSize="15"
+                       ReturnCommand="{Binding SendCommand}" />
+                <Button Grid.Column="2" Text="➤" FontSize="18"
+                        BackgroundColor="#00A3A1" TextColor="White"
+                        CornerRadius="22" WidthRequest="44" HeightRequest="44"
+                        Command="{Binding SendCommand}" />
+            </Grid>
+        </Border>
+
+    </Grid>
+</ContentPage>

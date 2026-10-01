@@ -1,0 +1,7 @@
+# Visual Studio temporary files
+.vs/
+*.vsidx
+
+# Local secrets — never commit
+appsettings.Development.json
+appsettings.Local.json

@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- ========================================================= -->
+    <!-- COLORS                                                     -->
+    <!-- ========================================================= -->
+
+    <Color x:Key="BrandTeal">#16C7C2</Color>
+    <Color x:Key="BrandTealDark">#0EAAA6</Color>
+    <Color x:Key="BrandTealBright">#35E1DB</Color>
+
+    <Color x:Key="BrandIndigo">#6366F1</Color>
+    <Color x:Key="BrandPurple">#8B5CF6</Color>
+
+    <Color x:Key="AuthBackground">#060A12</Color>
+    <Color x:Key="AuthBackground2">#0A1020</Color>
+
+    <Color x:Key="Surface">#101725</Color>
+    <Color x:Key="SurfaceElevated">#151E2E</Color>
+    <Color x:Key="SurfaceInput">#0C1320</Color>
+
+    <Color x:Key="TextPrimary">#F8FAFC</Color>
+    <Color x:Key="TextSecondary">#A7B1C2</Color>
+    <Color x:Key="TextMuted">#667085</Color>
+
+    <Color x:Key="Border">#202B3D</Color>
+    <Color x:Key="BorderStrong">#2B3A51</Color>
+
+    <Color x:Key="Danger">#FF647C</Color>
+    <Color x:Key="Success">#27D69A</Color>
+
+    <!-- ========================================================= -->
+    <!-- BRUSHES                                                    -->
+    <!-- ========================================================= -->
+
+    <LinearGradientBrush
+        x:Key="AuthBackgroundGradient"
+        StartPoint="0,0"
+        EndPoint="1,1">
+
+        <GradientStop
+            Color="#060A12"
+            Offset="0" />
+
+        <GradientStop
+            Color="#0A1020"
+            Offset="0.5" />
+
+        <GradientStop
+            Color="#070B14"
+            Offset="1" />
+
+    </LinearGradientBrush>
+
+    <LinearGradientBrush
+        x:Key="BrandGradient"
+        StartPoint="0,0"
+        EndPoint="1,1">
+
+        <GradientStop
+            Color="#35E1DB"
+            Offset="0" />
+
+        <GradientStop
+            Color="#16C7C2"
+            Offset="0.45" />
+
+        <GradientStop
+            Color="#6366F1"
+            Offset="1" />
+
+    </LinearGradientBrush>
+
+    <LinearGradientBrush
+        x:Key="ButtonGradient"
+        StartPoint="0,0"
+        EndPoint="1,0">
+
+        <GradientStop
+            Color="#35E1DB"
+            Offset="0" />
+
+        <GradientStop
+            Color="#16C7C2"
+            Offset="0.48" />
+
+        <GradientStop
+            Color="#6366F1"
+            Offset="1" />
+
+    </LinearGradientBrush>
+
+    <RadialGradientBrush
+        x:Key="GlowBrush"
+        Center="0.5,0.5"
+        Radius="0.7">
+
+        <GradientStop
+            Color="#16C7C2"
+            Offset="0" />
+
+        <GradientStop
+            Color="#16C7C2"
+            Offset="0.35" />
+
+        <GradientStop
+            Color="#00000000"
+            Offset="1" />
+
+    </RadialGradientBrush>
+
+    <!-- ========================================================= -->
+    <!-- TYPOGRAPHY                                                 -->
+    <!-- ========================================================= -->
+
+    <Style
+        x:Key="AuthBrandName"
+        TargetType="Label">
+
+        <Setter
+            Property="FontSize"
+            Value="25" />
+
+        <Setter
+            Property="FontAttributes"
+            Value="Bold" />
+
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource TextPrimary}" />
+
+    </Style>
+
+    <Style
+        x:Key="AuthHeroTitle"
+        TargetType="Label">
+
+        <Setter
+            Property="FontSize"
+            Value="42" />
+
+        <Setter
+            Property="FontAttributes"
+            Value="Bold" />
+
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource TextPrimary}" />
+
+        <Setter
+            Property="LineHeight"
+            Value="1.05" />
+
+    </Style>
+
+    <Style
+        x:Key="AuthPageTitle"
+        TargetType="Label">
+
+        <Setter
+            Property="FontSize"
+            Value="30" />
+
+        <Setter
+            Property="FontAttributes"
+            Value="Bold" />
+
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource TextPrimary}" />
+
+    </Style>
+
+    <Style
+        x:Key="AuthSubtitle"
+        TargetType="Label">
+
+        <Setter
+            Property="FontSize"
+            Value="14" />
+
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource TextSecondary}" />
+
+        <Setter
+            Property="LineHeight"
+            Value="1.4" />
+
+    </Style>
+
+    <Style
+        x:Key="InputLabel"
+        TargetType="Label">
+
+        <Setter
+            Property="FontSize"
+            Value="12" />
+
+        <Setter
+            Property="FontAttributes"
+            Value="Bold" />
+
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource TextSecondary}" />
+
+        <Setter
+            Property="CharacterSpacing"
+            Value="0.8" />
+
+        <Setter
+            Property="Margin"
+            Value="2,0,0,8" />
+
+    </Style>
+
+    <Style
+        x:Key="SmallMuted"
+        TargetType="Label">
+
+        <Setter
+            Property="FontSize"
+            Value="12" />
+
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource TextMuted}" />
+
+    </Style>
+
+    <!-- ========================================================= -->
+    <!-- AUTH CARD                                                   -->
+    <!-- ========================================================= -->
+
+    <Style
+        x:Key="AuthCard"
+        TargetType="Border">
+
+        <Setter
+            Property="BackgroundColor"
+            Value="{StaticResource Surface}" />
+
+        <Setter
+            Property="Stroke"
+            Value="{StaticResource Border}" />
+
+        <Setter
+            Property="StrokeThickness"
+            Value="1" />
+
+        <Setter
+            Property="StrokeShape">
+
+            <Setter.Value>
+                <RoundRectangle CornerRadius="28" />
+            </Setter.Value>
+
+        </Setter>
+
+        <Setter
+            Property="Padding"
+            Value="32" />
+
+    </Style>
+
+    <!-- ========================================================= -->
+    <!-- INPUTS                                                      -->
+    <!-- ========================================================= -->
+
+    <Style
+        x:Key="AuthEntry"
+        TargetType="Entry">
+
+        <Setter
+            Property="BackgroundColor"
+            Value="Transparent" />
+
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource TextPrimary}" />
+
+        <Setter
+            Property="PlaceholderColor"
+            Value="{StaticResource TextMuted}" />
+
+        <Setter
+            Property="FontSize"
+            Value="15" />
+
+        <Setter
+            Property="HeightRequest"
+            Value="54" />
+
+        <Setter
+            Property="ClearButtonVisibility"
+            Value="WhileEditing" />
+
+    </Style>
+
+    <Style
+        x:Key="AuthInputBorder"
+        TargetType="Border">
+
+        <Setter
+            Property="BackgroundColor"
+            Value="{StaticResource SurfaceInput}" />
+
+        <Setter
+            Property="Stroke"
+            Value="{StaticResource Border}" />
+
+        <Setter
+            Property="StrokeThickness"
+            Value="1" />
+
+        <Setter
+            Property="StrokeShape">
+
+            <Setter.Value>
+                <RoundRectangle CornerRadius="14" />
+            </Setter.Value>
+
+        </Setter>
+
+        <Setter
+            Property="Padding"
+            Value="14,0" />
+
+    </Style>
+
+    <!-- ========================================================= -->
+    <!-- BUTTONS                                                     -->
+    <!-- ========================================================= -->
+
+    <Style
+        x:Key="PrimaryAuthButton"
+        TargetType="Button">
+
+        <Setter
+            Property="Background"
+            Value="{StaticResource ButtonGradient}" />
+
+        <Setter
+            Property="TextColor"
+            Value="#FFFFFF" />
+
+        <Setter
+            Property="FontSize"
+            Value="15" />
+
+        <Setter
+            Property="FontAttributes"
+            Value="Bold" />
+
+        <Setter
+            Property="HeightRequest"
+            Value="56" />
+
+        <Setter
+            Property="CornerRadius"
+            Value="16" />
+
+        <Setter
+            Property="Padding"
+            Value="20,0" />
+
+    </Style>
+
+    <Style
+        x:Key="GoogleButton"
+        TargetType="Button">
+
+        <Setter
+            Property="BackgroundColor"
+            Value="{StaticResource SurfaceElevated}" />
+
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource TextPrimary}" />
+
+        <Setter
+            Property="FontSize"
+            Value="14" />
+
+        <Setter
+            Property="FontAttributes"
+            Value="Bold" />
+
+        <Setter
+            Property="HeightRequest"
+            Value="52" />
+
+        <Setter
+            Property="CornerRadius"
+            Value="14" />
+
+        <Setter
+            Property="BorderWidth"
+            Value="1" />
+
+        <Setter
+            Property="BorderColor"
+            Value="{StaticResource BorderStrong}" />
+
+    </Style>
+
+    <Style
+        x:Key="TextLinkButton"
+        TargetType="Button">
+
+        <Setter
+            Property="BackgroundColor"
+            Value="Transparent" />
+
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource BrandTealBright}" />
+
+        <Setter
+            Property="FontSize"
+            Value="13" />
+
+        <Setter
+            Property="FontAttributes"
+            Value="Bold" />
+
+        <Setter
+            Property="Padding"
+            Value="2" />
+
+    </Style>
+
+    <!-- ========================================================= -->
+    <!-- ERROR / SUCCESS                                            -->
+    <!-- ========================================================= -->
+
+    <Style
+        x:Key="ErrorContainer"
+        TargetType="Border">
+
+        <Setter
+            Property="BackgroundColor"
+            Value="#21121A" />
+
+        <Setter
+            Property="Stroke"
+            Value="#4A202E" />
+
+        <Setter
+            Property="StrokeThickness"
+            Value="1" />
+
+        <Setter
+            Property="Padding"
+            Value="14" />
+
+        <Setter
+            Property="StrokeShape">
+
+            <Setter.Value>
+                <RoundRectangle CornerRadius="13" />
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
+    <Style
+        x:Key="SuccessContainer"
+        TargetType="Border">
+
+        <Setter
+            Property="BackgroundColor"
+            Value="#0D211B" />
+
+        <Setter
+            Property="Stroke"
+            Value="#174D3A" />
+
+        <Setter
+            Property="StrokeThickness"
+            Value="1" />
+
+        <Setter
+            Property="Padding"
+            Value="14" />
+
+        <Setter
+            Property="StrokeShape">
+
+            <Setter.Value>
+                <RoundRectangle CornerRadius="13" />
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
+</ResourceDictionary>

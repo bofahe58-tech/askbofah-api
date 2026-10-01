@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="AskBofah.Views.WorkspaceView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource WorkspaceBackground}">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            MaximumWidthRequest="1100"
+            HorizontalOptions="Center"
+            Padding="42"
+            Spacing="26">
+
+            <Border
+                BackgroundColor="{StaticResource CardBackground}"
+                Stroke="{StaticResource CardBorder}"
+                StrokeThickness="1"
+                Padding="30">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="22" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Border
+                        WidthRequest="56"
+                        HeightRequest="56"
+                        HorizontalOptions="Start"
+                        Background="{StaticResource BrandGradient}"
+                        StrokeThickness="0">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="17" />
+                        </Border.StrokeShape>
+
+                        <Label
+                            Text="✦"
+                            FontSize="25"
+                            TextColor="White"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center" />
+
+                    </Border>
+
+                    <Label
+                        x:Name="TitleLabel"
+                        FontSize="30"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource TextPrimary}" />
+
+                    <Label
+                        x:Name="DescriptionLabel"
+                        FontSize="15"
+                        TextColor="{StaticResource TextSecondary}"
+                        LineHeight="1.4" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <Grid
+                ColumnDefinitions="*,*"
+                RowDefinitions="Auto,Auto"
+                ColumnSpacing="18"
+                RowSpacing="18">
+
+                <Border
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Style="{StaticResource FeatureCard}">
+
+                    <VerticalStackLayout Spacing="8">
+
+                        <Label
+                            Text="✦"
+                            FontSize="20"
+                            TextColor="{StaticResource BrandTeal}" />
+
+                        <Label
+                            Text="Create something new"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource TextPrimary}" />
+
+                        <Label
+                            Text="Start a new workflow from this workspace."
+                            FontSize="13"
+                            TextColor="{StaticResource TextSecondary}" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+                <Border
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Style="{StaticResource FeatureCard}">
+
+                    <VerticalStackLayout Spacing="8">
+
+                        <Label
+                            Text="⌁"
+                            FontSize="20"
+                            TextColor="{StaticResource BrandIndigo}" />
+
+                        <Label
+                            Text="Recent activity"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource TextPrimary}" />
+
+                        <Label
+                            Text="Your latest work will appear here."
+                            FontSize="13"
+                            TextColor="{StaticResource TextSecondary}" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+                <Border
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Style="{StaticResource FeatureCard}">
+
+                    <VerticalStackLayout Spacing="8">
+
+                        <Label
+                            Text="◷"
+                            FontSize="20"
+                            TextColor="{StaticResource BrandPurple}" />
+
+                        <Label
+                            Text="Stay organized"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource TextPrimary}" />
+
+                        <Label
+                            Text="Everything stays inside your Ask Bofah workspace."
+                            FontSize="13"
+                            TextColor="{StaticResource TextSecondary}" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+                <Border
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Style="{StaticResource FeatureCard}">
+
+                    <VerticalStackLayout Spacing="8">
+
+                        <Label
+                            Text="⚙"
+                            FontSize="20"
+                            TextColor="{StaticResource BrandTeal}" />
+
+                        <Label
+                            Text="Customize your workflow"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource TextPrimary}" />
+
+                        <Label
+                            Text="Connect tools and personalize Ask Bofah."
+                            FontSize="13"
+                            TextColor="{StaticResource TextSecondary}" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+            </Grid>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentView>
