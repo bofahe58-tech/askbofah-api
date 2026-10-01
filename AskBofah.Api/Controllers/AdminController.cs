@@ -26,7 +26,6 @@ namespace AskBofah.Api.Controllers
         {
             var currentUserId = (Guid)HttpContext.Items["UserId"]!;
 
-            // Verify the caller is an admin
             var caller = await _db.Users.FindAsync(currentUserId);
             if (caller is null || !caller.IsAdmin)
                 return Forbid();
@@ -92,6 +91,33 @@ namespace AskBofah.Api.Controllers
             await _db.SaveChangesAsync();
 
             return Ok(new { message = "User deleted." });
+        }
+
+        // ============================================================
+        // POST /api/admin/become-admin
+        // TEMP: self-promote to admin. Remove before final submission.
+        // ============================================================
+        [HttpPost("become-admin")]
+        [AllowAnonymous]
+        public async Task<IActionResult> BecomeAdmin()
+        {
+            // Check we have a valid JWT-derived UserId
+            var userIdObj = HttpContext.Items["UserId"];
+            if (userIdObj is not Guid userId)
+                return Unauthorized(new { message = "You must be logged in." });
+
+            var user = await _db.Users.FindAsync(userId);
+            if (user is null)
+                return NotFound(new { message = "User not found." });
+
+            user.IsAdmin = true;
+            await _db.SaveChangesAsync();
+
+            return Ok(new
+            {
+                message = "You are now an admin.",
+                email = user.Email
+            });
         }
     }
 }
